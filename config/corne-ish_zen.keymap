@@ -9,23 +9,24 @@
 
 
 / {
-    behaviors {  // ← Neuer Block HIER
+    behaviors {
         sticky_layer_num: sl_num {
             compatible = "zmk,behavior-sticky-key";
             label = "STICKY_NUMBER";
-            bindings = <1>;         
+            binding-params = <1>;
+            release-after-ms = <1000>;
             quick-release;
         };
         
         sticky_layer_sym: sl_sym {
             compatible = "zmk,behavior-sticky-key";
             label = "STICKY_SYMBOL";
-            bindings = <2>;         
+            binding-params = <2>;
+            release-after-ms = <1000>;
             quick-release;
         };
-    };  // ← Und hier schließen
+    };
 };
-
 
 / {
     chosen { zmk,matrix_transform = &default_transform; };
