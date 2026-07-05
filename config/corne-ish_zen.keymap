@@ -13,17 +13,19 @@
         sl_num: sticky_number {
             compatible = "zmk,behavior-sticky-key";
             label = "STICKY_NUMBER";
-            binding-params = <1>;
-            release-after-ms = <1000>;
+            #binding-cells = <1>;           // ← HINZUGEFÜGT aus Komplexer Datei!
+            bindings = <&mo>;                // ← HIER OHNE LAYER-ZAHLE!
             quick-release;
+            release-after-ms = <1000>;
         };
         
         sl_sym: sticky_symbol {
             compatible = "zmk,behavior-sticky-key";
             label = "STICKY_SYMBOL";
-            binding-params = <2>;
-            release-after-ms = <1000>;
+            #binding-cells = <1>;            // ← HINZUGEFÜGT!
+            bindings = <&mo>;                 // ← HIER OHNE LAYER-ZAHLE!
             quick-release;
+            release-after-ms = <1000>;
         };
     };
 
@@ -40,7 +42,7 @@
 &kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T      &kp Z      &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G      &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LSHFT  &kp Y  &kp X  &kp C     &kp V  &kp B      &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp LGUI  &sl_num  &kp RET  &kp SPACE  &sl_sym  &kp RALT
+                         &kp LGUI  &sl_num  1  &kp RET  &kp SPACE  &sl_sym  2  &kp RALT  // ← Layer-IDs HIER!
             >;
         };
 
