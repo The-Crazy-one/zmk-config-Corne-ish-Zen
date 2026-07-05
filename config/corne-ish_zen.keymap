@@ -10,7 +10,7 @@
 
 / {
     behaviors {
-        sticky_layer_num: sl_num {
+        sl_num: sticky_number {
             compatible = "zmk,behavior-sticky-key";
             label = "STICKY_NUMBER";
             binding-params = <1>;
@@ -18,7 +18,7 @@
             quick-release;
         };
         
-        sticky_layer_sym: sl_sym {
+        sl_sym: sticky_symbol {
             compatible = "zmk,behavior-sticky-key";
             label = "STICKY_SYMBOL";
             binding-params = <2>;
@@ -26,12 +26,11 @@
             quick-release;
         };
     };
-};
 
-/ {
-    chosen { zmk,matrix_transform = &default_transform; };
-};
-/ {
+    chosen {
+        zmk,matrix_transform = &default_transform;
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
