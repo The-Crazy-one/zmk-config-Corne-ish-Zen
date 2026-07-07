@@ -14,9 +14,9 @@
         tog_num: toggle_number {
             compatible = "zmk,behavior-toggle";
             label = "TOGGLE_NUMBER";
+            #binding-cells = <1>;
             bindings = <&mo>;
         };
-
     };
 
     chosen { zmk,matrix_transform = &default_transform; };
