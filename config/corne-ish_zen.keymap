@@ -10,7 +10,25 @@
 
 / {
     behaviors {
-        // Kein Sticky, alles normal!
+        // Sticky Layer für NUMBER (Layer 1)
+        sl_num: sticky_number {
+            compatible = "zmk,behavior-sticky-key";
+            label = "STICKY_NUMBER";
+            #binding-cells = <1>;
+            bindings = <&mo>;
+            quick-release;
+            release-after-ms = <1000>;
+        };
+
+        // Sticky Layer für SYMBOL (Layer 2)
+        sl_sym: sticky_symbol {
+            compatible = "zmk,behavior-sticky-key";
+            label = "STICKY_SYMBOL";
+            #binding-cells = <1>;
+            bindings = <&mo>;
+            quick-release;
+            release-after-ms = <1000>;
+        };
     };
 
     chosen { zmk,matrix_transform = &default_transform; };
@@ -34,7 +52,7 @@
 &kp TAB     &mt F1 N1     &mt F2 N2     &mt F3 N3     &mt F4 N4     &mt F5 N5       &mt F6 N6  &mt F7 N7  &mt F8 N8  &mt F9 N9  &mt F10 N0  &kp BSPC
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &kp F11     &kp F12
 &kp LSHFT   &kp C_PREV    &kp C_NEXT    &kp C_PP      &kp C_VOL_DN  &kp C_VOL_UP    &trans     &trans     &trans     &trans     &trans      &trans
-                                        &out OUT_TOG  &trans        &kp RET         &kp SPACE  &trans     &kp RALT
+                                        &sl_num 1     &trans        &kp RET         &kp SPACE  &trans     &kp RALT
             >;
         };
 
