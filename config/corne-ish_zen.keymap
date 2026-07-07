@@ -10,26 +10,6 @@
 
 / {
     behaviors {
-        // Sticky Layer für NUMBER (Layer 1)
-        sl_num: sticky_number {
-            compatible = "zmk,behavior-sticky-key";
-            label = "STICKY_NUMBER";
-            #binding-cells = <1>;
-            bindings = <&mo>;
-            quick-release;
-            release-after-ms = <1000>;
-        };
-
-        // Sticky Layer für SYMBOL (Layer 2)
-        sl_sym: sticky_symbol {
-            compatible = "zmk,behavior-sticky-key";
-            label = "STICKY_SYMBOL";
-            #binding-cells = <1>;
-            bindings = <&mo>;
-            quick-release;
-            release-after-ms = <1000>;
-        };
-
         // Toggle Layer für NUMBER (Layer 1) - AN/AUS schaltbar!
         tog_num: toggle_number {
             compatible = "zmk,behavior-toggle";
