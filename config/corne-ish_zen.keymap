@@ -7,6 +7,10 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+#define QWERTY 0
+#define NUMBER 1
+#define SYMBOL 2
+
 / {
     behaviors {
         // Kein Sticky, alles normal!
